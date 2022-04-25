@@ -293,13 +293,13 @@ ul li a:hover {
 
 /*Adress*/
 .table-position{
-    position: relative;
-    left:15%;
+   margin-left: 25%;
    
 }
 .column {
     float: left;
-    width: 33.33%;
+    width: 28.33%;
+    margin-right:2px;
 }
 
 .row:after {
