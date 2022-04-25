@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% include "base.html" %}
 {% load static %}
 
 
@@ -24,7 +24,7 @@
         </div>
         <!-- About Image -->
         <div class="about-image">
-           <img src="{% static '../static/img/bg.jpg' %}"/>
+           <img src="{% static 'img/bg.jpg' %}"/>
         </div>
     </section>
 
@@ -35,16 +35,7 @@
             <p>Lorem ipsum dolor sit amet consectetur,<br> adipisicing elit. Ullam, quae!</p>
 
         </div>
-        <div class="food-content">
-            <img src="{% static '../static/img/food1.jpg' %}"/>
-            <img src="{% static '../static/img/food2.jpg' %}"/>
-            <img src="{% static '../static/img/food3.jpg' %}"/>
-            <img src="{% static '../static/img/food4.jpg' %}"/>
-            <img src="{% static '../static/img/food5.jpg' %}"/>
-            <img src="{% static '../static/img/food6.jpg' %}"/>
-
-
-        </div>
+       
     </section>
 
 
@@ -52,7 +43,7 @@
     <section id="destination">
         <!-- Destination Image -->
         <div class="destination-image">
-          <img src="{% static '../static/img/bg.jpg' %}"/>  
+          <img src="{% static 'img/bg.jpg' %}"/>  
         </div>
         <!-- Destination Text -->
         <div class="destination-text">
