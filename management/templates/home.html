@@ -1,64 +1,68 @@
-{% include "base.html" %}
-{% load static %}
-
-
-{% include "navbar.html" %}
+{% include "base.html" %} {% load static %} {% include "navbar.html" %}
 <section id="main">
-        <div class="main-content">
-            <h1>Slogan</h1>
-           <br>
-                <label>
-                    <input type="text" placeholder="Search">
-                    <button>search</button>
-                </label>
-        </div>
-    </section>
+  <div class="main-content">
+    <h1>Slogan</h1>
+    <br />
+    <label>
+      <input type="text" placeholder="Search" />
+      <button>search</button>
+    </label>
+  </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="about-text">
-            <span>About Us</span>
-            <h1>Plan Your Vacation On One Click</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui repudiandae facilis rerum laborum obcaecati iste natus cumque error architecto. Qui ducimus, repellat animi eius inventore quisquam blanditiis amet, nobis eaque ullam quos exercitationem dolorum consequatur!</p>
-            <button>Learn More</button>
-        </div>
-        <!-- About Image -->
-        <div class="about-image">
-           <img src="{% static 'img/bg.jpg' %}"/>
-        </div>
-    </section>
+<!-- About Section -->
+<section id="about">
+  <div class="about-text">
+    <span>About Us</span>
+    <h1>Plan Your Vacation On One Click</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui repudiandae
+      facilis rerum laborum obcaecati iste natus cumque error architecto. Qui
+      ducimus, repellat animi eius inventore quisquam blanditiis amet, nobis
+      eaque ullam quos exercitationem dolorum consequatur!
+    </p>
+    <button>Learn More</button>
+  </div>
+  <!-- About Image -->
+  <div class="about-image">
+    <img src="{% static 'img/bg.jpg' %}" />
+  </div>
+</section>
+<hr />
+<!-- Food Section -->
+<section id="food">
+  <div class="food-heading">
+    <h1>Food</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur,<br />
+      adipisicing elit. Ullam, quae! <br />
+      please contact with us
+    </p>
+  </div>
+  <!--Adress-->
+ 
+</section>
+<br>
+ <div  class="row table-position">
+    <div class="column">
+      <h3>PHONE</h3>
+      <ul>
+        <li>0798095012</li>
+      </ul>
+    </div>
+    <div class="column">
+      <h3>E-MAIL</h3>
+      <ul>
+        <li>info@psut.edu.jo</li>
+      </ul>
+    </div>
+    <div class="column">
+      <h3>ADRESS</h3>
+      <ul>
+        <li>KHALIL AL -SAKET STREET</li>
+      </ul>
+    </div>
+  </div>
+  <br>
 
-    <!-- Food Section -->
-    <section id="food">
-        <div class="food-heading">
-            <h1>Food</h1>
-            <p>Lorem ipsum dolor sit amet consectetur,<br> adipisicing elit. Ullam, quae!</p>
-
-        </div>
-       
-    </section>
-
-
-    <!-- Destination Section -->
-    <section id="destination">
-        <!-- Destination Image -->
-        <div class="destination-image">
-          <img src="{% static 'img/bg.jpg' %}"/>  
-        </div>
-        <!-- Destination Text -->
-        <div class="destination-text">
-            <span>Destination</span>
-            <h1>Your Destination Vacation On One Click</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui repudiandae facilis rerum laborum obcaecati iste natus cumque error architecto. Qui ducimus, repellat animi eius inventore quisquam blanditiis amet, nobis eaque ullam quos exercitationem dolorum consequatur!</p>
-            <button>Book Now</button>
-        </div>
-        
-    </section>
-
-    
-
-
-   {% include "footer.html" %}
-
-
-
+{% include "footer.html" %}

@@ -16,7 +16,7 @@
     width: 100%;
     min-height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-        url(../img/background.jpg);
+        url("../img/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -111,8 +111,7 @@ ul li a:hover {
     border: none;
     padding: 0px 16px;
     width: 500px;
-    height: 40px;
-    border-radius: 10px;
+    height: 50px;
 }
 
 .main-content button {
@@ -123,21 +122,18 @@ ul li a:hover {
     background-color: #008665;
     color: #fff;
     padding: 0px 16px;
-    height: 40px;
+    height: 50px;
     letter-spacing: 1px;
     text-transform: uppercase;
     border: none;
     cursor: pointer;
-    margin-top: -7px;
+    margin-top: -12px;
     font-size: 15px;
-    border-radius: 10px;
 }
 
 .main-content button:hover {
     background: #8d9194;
 }
-
-
 /* About Section */
 #about {
     width: 100%;
@@ -197,7 +193,7 @@ ul li a:hover {
 
 /* Food Section */
 #food {
-    background-color: #46d1e4;
+    background-color: #fff;
 }
 
 .food-heading {
@@ -206,12 +202,12 @@ ul li a:hover {
 
 .food-heading h1 {
     font-size: 2rem;
-    color: #fff;
+    color:#000000 ;
     font-weight: 500;
 }
 
 .food-heading p {
-    color: #fff;
+    color: #000000;
     margin-bottom: 12px;
 }
 
@@ -334,6 +330,23 @@ ul li a:hover {
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+/*Adress*/
+.table-position{
+    position: relative;
+    left:15%;
+   
+}
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* Copright */
