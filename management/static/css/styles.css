@@ -191,6 +191,9 @@ ul li a:hover {
     object-position: center;
 }
 
+#more {
+    display: none;
+}
 /* Food Section */
 #food {
     background-color: #fff;
@@ -286,51 +289,7 @@ ul li a:hover {
     object-position: center;
 }
 
-/* Contact Form */
-#contact-box {
-    background-color: #e5e5e5;
-}
 
-#contact-box form {
-    display: grid;
-    max-width: 1000px;
-    padding: 40px 200px;
-}
-
-#contact-box h3 {
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 12px;
-}
-
-#contact-box form input,
-#contact-box form textarea {
-    font-size: 16px;
-    margin-bottom: 18px;
-    padding: 15px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #008665;
-    resize: none;
-}
-
-#contact-box form textarea {
-    min-height: 200px;
-}
-
-#contact-box form input::placeholder,
-#contact-box form textarea::placeholder {
-    color: #c7c7c7;
-}
-
-#contact-box form input[type="submit"] {
-    margin-top: 12px;
-    max-width: 100px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
 
 /*Adress*/
 .table-position{
@@ -393,7 +352,7 @@ ul li a:hover {
     .toggle {
         width: 40px;
         height: 40px;
-        background: url(images/menu.png);
+        background: url("../img/menu.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 30px;
@@ -401,7 +360,7 @@ ul li a:hover {
     }
 
     .toggle.active {
-        background: url(images/close.png);
+        background: url("../imge/close.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 25px;
