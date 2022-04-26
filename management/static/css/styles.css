@@ -75,7 +75,7 @@ nav.sticky ul li a:hover {
 }
 
 ul li a:hover {
-    background: #008665;
+    background: #B33C86;
     border: none;
 }
 
@@ -119,7 +119,7 @@ ul li a:hover {
     top: 0;
     bottom: 0;
     right: 0;
-    background-color: #008665;
+    background-color: #B33C86;
     color: #fff;
     padding: 0px 16px;
     height: 50px;
@@ -167,7 +167,7 @@ ul li a:hover {
 .about-text button {
     padding: 12px 22px;
     border: none;
-    background: #008665;
+    background: #B33C86;
     letter-spacing: 1px;
     font-size: 15px;
     font-weight: 400;
@@ -195,100 +195,31 @@ ul li a:hover {
     display: none;
 }
 /* Food Section */
-#food {
+#contact {
     background-color: #fff;
 }
 
-.food-heading {
+.contact-heading {
     text-align: center;
 }
 
-.food-heading h1 {
+.contact-heading h1 {
     font-size: 2rem;
     color:#000000 ;
     font-weight: 500;
 }
 
-.food-heading p {
+.contact-heading p {
     color: #000000;
     margin-bottom: 12px;
 }
 
-#food .food-content {
+#contact {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
 }
-
-.food-content img {
-    height: 350px;
-    width: 350px;
-    padding: 20px 10px;
-}
-
-.food-content img:hover {
-    transform: scale(1.2);
-    transition: 0.5s ease;
-}
-
-/* Destination Section */
-#destination {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 100px;
-}
-
-.destination-text {
-    width: 500px;
-    justify-content: center;
-}
-
-.destination-text span {
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
-.destination-text h1 {
-    font-size: 3rem;
-}
-
-.destination-text p {
-    font-size: 1rem;
-    margin: 5px 0px 15px;
-    text-align: justify;
-}
-
-.destination-text button {
-    padding: 12px 22px;
-    border: none;
-    background: #008665;
-    letter-spacing: 1px;
-    font-size: 15px;
-    font-weight: 400;
-    color: #fff;
-    cursor: pointer;
-}
-
-.destination-text button:hover {
-    background: #8d9194;
-}
-
-.destination-image {
-    width: 450px;
-    height: 500px;
-}
-
-.destination-image img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    object-position: center;
-}
-
 
 
 /*Adress*/
@@ -335,7 +266,7 @@ ul li a:hover {
         text-align: center;
         width: 100%;
         height: 100vh;
-        background: #008665;
+        background: #B33C86;
         transition: 0.5s ease;
         z-index: 999;
         border-top: 1px solid rgba(0, 0, 0, 0.2);
@@ -385,24 +316,7 @@ ul li a:hover {
         height: 400px;
     }
 
-    .destination-text span {
-        font-size: 1.2rem;
-        font-weight: 400;
-    }
-
-    .destination-text h1 {
-        font-size: 1.8rem;
-    }
-
-    .destination-text {
-        width: 400px;
-    }
-
-    .destination-image img {
-        width: 350px;
-        height: 350px;
-        margin-top: 20px;
-    }
+   
 }
 
 @media (max-width: 660px) {
@@ -422,20 +336,7 @@ ul li a:hover {
         flex-direction: column;
     }
 
-    #destination {
-        flex-direction: column-reverse;
-        padding: 50px;
-    }
-
-    .food-content img {
-        height: 250px;
-        width: 250px;
-        padding: 15px 5px;
-    }
-
-    .destination-image img {
-        margin-top: 20px;
-    }
+    
 }
 
 @media (max-width: 500px) {
@@ -459,33 +360,7 @@ ul li a:hover {
         width: 280px;
     }
 
-    .food-content img {
-        height: 200px;
-        width: 200px;
-        padding: 10px 4px;
-    }
 
-    #contact-box form {
-        max-width: 500px;
-        padding: 20px 40px;
-    }
-}
-
-@media (max-width: 400px) {
-    .destination-image {
-        width: 100%;
-        height: 100%;
-    }
-
-    .destination-image img {
-        width: 300px;
-        height: 250px;
-        margin-top: 20px;
-    }
-
-    .destination-text {
-        width: 300px;
-    }
 }
 
 @media (max-width: 360px) {
