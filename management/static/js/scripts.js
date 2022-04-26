@@ -27,3 +27,5 @@ function loadMore() {
     moreText.style.display = "inline";
   }
 }
+
+
