@@ -11,7 +11,7 @@ function toggleMenu() {
   menuToggle.classList.toggle("active");
   menu.classList.toggle("active");
 }
-// Read More Button
+// ReadMore Button
 function loadMore() {
   var dots = document.getElementById("dots");
   var moreText = document.getElementById("more");

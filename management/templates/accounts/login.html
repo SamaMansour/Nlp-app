@@ -1,0 +1,49 @@
+{% include "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+  
+
+
+<div class="container">
+	<div class ="border p-3 mt-4" >
+		<div class="col-md-12">
+		   
+		</div>
+	
+	
+	                
+	                <div class="login-title">
+	                    <h4 class="text-primary pl-3">Log In</h4>
+	                </div>
+	                <div class="login-form md-12">
+	                    <form method="POST"  >
+                        {% csrf_token %}
+                        <fieldset class="form-group mb-3 ">
+                            
+                            {{ form|crispy }}
+                        </fieldset>  
+                        
+                        <div class="form-row">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+	                </div>
+	                <div class="logi-forgot text-right mt-2">
+	                    <a href="{% url 'register' %}" >Sign Up Now </a>
+	                </div>
+	       
+	
+	</div>
+</div>
+</div>
+
+{% endblock content %}
