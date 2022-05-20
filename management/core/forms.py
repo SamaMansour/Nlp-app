@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 
 class NewUserForm(UserCreationForm):
 	email = forms.EmailField(required=True)
-	phone = forms.CharField(required=True)
+	phone = forms.CharField(required=True,max_length=10)
 
 	class Meta:
 		model = User

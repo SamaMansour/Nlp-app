@@ -1,0 +1,201 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NLP App</title>
+    <!-- Link To CSS -->
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/form.css' %}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- CSS only -->
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <i class="bx bxs-smile"></i>
+        <span class="text">AdminHub</span>
+      </a>
+      <ul class="side-menu top">
+        <li class="active">
+          <a href="#">
+            <i class="bx bxs-dashboard"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-shopping-bag-alt"></i>
+            <span class="text">My Store</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-doughnut-chart"></i>
+            <span class="text">Analytics</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-message-dots"></i>
+            <span class="text">Message</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-group"></i>
+            <span class="text">Team</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#">
+            <i class="bx bxs-cog"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="logout">
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- SIDEBAR -->
+
+    <!-- CONTENT -->
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <a href="#" class="nav-link">Categories</a>
+      </nav>
+      <!-- NAVBAR -->
+
+      <!-- MAIN -->
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <h1>Dashboard</h1>
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Dashboard</a>
+              </li>
+              <li><i class="bx bx-chevron-right"></i></li>
+              <li>
+                <a class="active" href="#">Home</a>
+              </li>
+            </ul>
+          </div>
+          <a href="#" class="btn-download">
+            <i class="bx bxs-cloud-download"></i>
+            <span class="text">Add Case</span>
+          </a>
+        </div>
+
+        <ul class="box-info">
+          <li>
+            <i class="bx bxs-calendar-check"></i>
+            <span class="text">
+              <h3>1020</h3>
+              <p>New Order</p>
+            </span>
+          </li>
+          <li>
+            <i class="bx bxs-group"></i>
+            <span class="text">
+              <h3>2834</h3>
+              <p>Visitors</p>
+            </span>
+          </li>
+          <li>
+            <i class="bx bxs-dollar-circle"></i>
+            <span class="text">
+              <h3>$2543</h3>
+              <p>Total Sales</p>
+            </span>
+          </li>
+        </ul>
+
+        <div class="table-data">
+          <div class="order">
+            <div class="head">
+              <h3>Recent Orders</h3>
+              <i class="bx bx-search"></i>
+              <i class="bx bx-filter"></i>
+            </div>
+
+            <div class="wrapper">
+              <header>Send us a Message</header>
+              <form action="#">
+                <div class="dbl-field">
+                  <div class="field">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Enter your name"
+                    />
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div class="field">
+                    <input
+                      type="text"
+                      name="email"
+                      placeholder="Enter your email"
+                    />
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                </div>
+                <div class="dbl-field">
+                  <div class="field">
+                    <input
+                      type="text"
+                      name="phone"
+                      placeholder="Enter your phone"
+                    />
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div class="field">
+                    <input
+                      type="text"
+                      name="website"
+                      placeholder="Enter your website"
+                    />
+                    <i class="fas fa-globe"></i>
+                  </div>
+                </div>
+                <div class="message">
+                  <textarea
+                    placeholder="Write your message"
+                    name="message"
+                  ></textarea>
+                  <i class="material-icons">message</i>
+                </div>
+                <div class="button-area">
+                  <button type="submit">Send Message</button>
+                  <span></span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js/dashboard.js' %}"
+    ></script>
+  </body>
+</html>

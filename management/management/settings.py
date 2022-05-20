@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import urllib.parse
+import pymongo
+from pymongo import MongoClient
+import urllib.parse
+
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,10 +88,20 @@ WSGI_APPLICATION = 'management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+username = urllib.parse.quote_plus('root')
+password = urllib.parse.quote_plus('Lovethis4050')
+name = urllib.parse.quote_plus('nlp')
+
+
 DATABASES = {
+
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'name',
+        'HOST': 'mongodb+srv://<root>:<Lovethis4050>@cluster0.ugoja.mongodb.net/test?retryWrites=true',
+        'USER': '<root>',
+        'PASSWORD': '<Lovethis4050>',
     }
 }
 
