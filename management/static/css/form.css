@@ -1,16 +1,4 @@
-.wrapper {
-    width: 715px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-}
 
-.wrapper header {
-    font-size: 22px;
-    font-weight: 600;
-    padding: 20px 30px;
-    border-bottom: 1px solid #ccc;
-}
 
 .wrapper form {
     margin: 35px 30px;
@@ -110,7 +98,7 @@ form .button-area {
     cursor: pointer;
     border-radius: 5px;
     padding: 13px 25px;
-    background: #0D6EFD;
+    background: #B33C86;
     transition: background 0.3s ease;
 }
 

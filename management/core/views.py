@@ -6,11 +6,15 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
+from .forms import CaseForm,  UserGroupForm
+from django.forms import inlineformset_factory
+from .models import *
 
 # Create your views here.
 
 # HomeView
+
+
 def HomeView(request, *args, **kwargs):
     return render(request, "home.html", {})
 
@@ -19,6 +23,7 @@ def HomeView(request, *args, **kwargs):
 
 def DashboardView(request, *args, **kwargs):
     return render(request, "Dashboard\index.html", {})
+
 
 # SignupView
 
@@ -36,7 +41,7 @@ def register_request(request):
     form = NewUserForm()
     return render(request=request, template_name="accounts/signup.html", context={"register_form": form})
 
-#loginView
+# loginView
 
 
 def login_request(request):
@@ -60,7 +65,7 @@ def login_request(request):
                   context={"form": form})
 
 
-#logout
+# logout
 def logout_request(request):
     logout(request)
     return redirect('/')
@@ -69,3 +74,36 @@ def logout_request(request):
 @login_required
 def profile(request):
     return render(request, 'Dashboard/index.html')
+
+# Group View
+
+
+# Case view
+
+@login_required(login_url='login')
+def createCase(request):
+	form_class = CaseForm
+	form = CaseForm(request.POST)
+ 
+
+	if request.method == 'POST':
+		if form.is_valid():
+			form.owner = request.user
+			form.save(commit=False)
+			return reverse(home_page)
+
+	return render(request, "case/createCase.html", {"form": form })
+
+
+@login_required(login_url='login')
+def createGroup(request):
+	form_class = UserGroupForm
+	form = UserGroupForm(request.POST)
+
+	if request.method == 'POST':
+		if form.is_valid():
+			
+			form.save(commit=False)
+			return reverse(home_page)
+
+	return render(request, "group/create.html", context= {"form": form})
