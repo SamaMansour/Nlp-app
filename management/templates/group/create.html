@@ -132,10 +132,12 @@
               <i class="bx bx-filter"></i>
             </div>
 
-            <form action="POST" enctype="multipart/form-data">
+            <form action="{%url 'createGroup' %}" method="POST" enctype="multipart/form-data">
               {% csrf_token %}
                
-             {{ form.as_p }}
+             <div class="dbl-field">
+               <input type="text" class="field" placeholder="name" name="name"/>
+             </div>
               {% endblock %}
 
               <div class="button-area">

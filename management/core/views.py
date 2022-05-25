@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import CaseForm,  UserGroupForm
 from django.forms import inlineformset_factory
+from django.contrib.auth.models import Group
 from .models import *
 
 # Create your views here.
@@ -97,13 +98,10 @@ def createCase(request):
 
 @login_required(login_url='login')
 def createGroup(request):
-	form_class = UserGroupForm
-	form = UserGroupForm(request.POST)
-
 	if request.method == 'POST':
-		if form.is_valid():
-			
-			form.save(commit=False)
-			return reverse(home_page)
-
-	return render(request, "group/create.html", context= {"form": form})
+		name =request.POST.get('name')
+		if name != " ":
+			if len(Group.objects.filter(name=name)) ==0:
+				group=Group(name=name)
+				group.save()
+	return render(request,'group/create.html')
