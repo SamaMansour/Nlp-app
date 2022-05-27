@@ -105,3 +105,12 @@ def createGroup(request):
 				group=Group(name=name)
 				group.save()
 	return render(request,'group/create.html')
+
+# List Groups
+
+def getGroups(request):
+
+    group = Group.objects.all()
+    for i in group:
+        print (i.name)
+    return render(request,'group/create.html',context= {'group':group})
