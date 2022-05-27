@@ -114,3 +114,11 @@ def getGroups(request):
     for i in group:
         print (i.name)
     return render(request,'group/create.html',context= {'group':group})
+
+# Delete Group
+
+def delGroups (request,name):
+    b =Group.objects.filter(name=name)
+    b.delete()
+    return render(request, 'group/create.html')
+

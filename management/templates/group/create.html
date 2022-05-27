@@ -168,7 +168,7 @@
 								</td>
 								
 								<td><span class="status completed">Edit</span>  
-                  <span class="status pending">Delete</span></td>
+                  <span class="status pending"> <a href="{% url 'delGroups' name=i.name %}">Delete</a></span></td>
                
 							</tr>
               {% endfor %}
