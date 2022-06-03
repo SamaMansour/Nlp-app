@@ -96,10 +96,7 @@
               </li>
             </ul>
           </div>
-          <a href="#" class="btn-download">
-            <i class="bx bxs-cloud-download"></i>
-            <span class="text">Add Case</span>
-          </a>
+       
         </div>
   <ul class="box-info">
 				<li>
@@ -127,28 +124,12 @@
         <div class="table-data">
           <div class="order">
             <div class="head">
-              <h3>Create Group</h3>
+              <h3>Groups</h3>
               <i class="bx bx-search"></i>
               <i class="bx bx-filter"></i>
             </div>
 
-            <form action="{%url 'createGroup' %}" method="POST" enctype="multipart/form-data">
-              {% csrf_token %}
-            <div class ="dbl-field">
-             <div class="field">
-               <input type="text" class="field" placeholder="name" name="name"/>
-
-               <div class="button-area">
-                <button type="submit">Create Group</button>
-                <span></span>
-              </div>
-             </div>
-             
-             </div>
-              {% endblock %}
-
-              
-            </form>
+            
 
             	<table>
 						<thead>
@@ -168,7 +149,8 @@
 								</td>
 								
 								<td>  
-                  <span class="status pending"> <a href="{% url 'delGroups' name=i.name %}">Delete</a></span></td>
+                  <span class="status pending"> <a href="{% url 'joinGroup' name=i.name %}">Join</a></span>
+                  <span class="status pending"> <a href="{% url 'joinGroup' name=i.name %}">Leave</a></span></td>
                
 							</tr>
               {% endfor %}
@@ -188,6 +170,7 @@
       src="{% static 'js/dashboard.js' %}"
     ></script>
   </body>
+  {% endblock %}
 </html>
 
 
