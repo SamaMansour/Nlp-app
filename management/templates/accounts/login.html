@@ -1,36 +1,53 @@
-{% include "base.html" %} 
+{% include "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-{% load static %}
+
+
 
 <head>
-
-  <link
-    href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    rel="stylesheet"
-    id="bootstrap-css"
-  />
-  <link href="{% static 'css/accounts.css' %}" rel="stylesheet">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<body>
-<div class="form-inner">
-  <form action="#" class="login" method="POST">
-    {% csrf_token %}
-    <fieldset class="form-group mb-3 ">{{ form|crispy }}</fieldset>
-    <div class="pass-link">
-      <a href="/reset_password">Forgot password?</a>
-    </div>
-    <div class="field btn">
-      <div class="btn-layer"></div>
-      <input type="submit" value="Login" />
-    </div>
-    <div class="signup-link">
-      Not a member? <a href="{% url 'register' %}">Signup now</a>
-    </div>
-  </form>
 
-  {% endblock content %}
+  
+
+
+<div class="container">
+	<div class ="border p-3 mt-4" >
+		<div class="col-md-12">
+		   
+		</div>
+	
+	
+	                
+	                <div class="login-title">
+	                    <h4 class="text-primary pl-3">Log In</h4>
+	                </div>
+	                <div class="login-form md-12">
+	                    <form method="POST"  >
+                        {% csrf_token %}
+                        <fieldset class="form-group mb-3 ">
+                            
+                            {{ form|crispy }}
+                           
+                        </fieldset>  
+  <div class="logi-forgot text-right mt-2">
+	                    <a href="/reset_password" >Forgot Password</a>
+	                </div>
+                        <div class="form-row">
+                          
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+	                </div>
+	                <div class="logi-forgot text-right mt-2">
+	                    <a href="{% url 'register' %}" >Sign Up Now </a>
+	                </div>
+	       
+	
+	</div>
 </div>
-</body>
+</div>
+
+{% endblock content %}
