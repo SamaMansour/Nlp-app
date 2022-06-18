@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import HomeView, DashboardView,register_request,login_request,profile, createGroup, getGroups,delGroups, joinGroup
+from core.views import HomeView, DashboardView,register_request,login_request,profile, createGroup, getGroups,delGroups, join, leave, ForgetPassword,ChangePassword
 from django.contrib.auth import views as auth_views
 
 
@@ -27,8 +27,28 @@ urlpatterns = [
     path('group/add', createGroup, name="createGroup"),
     path('group/', getGroups, name="getGroups"),
     path('group/del/<str:name>/', delGroups, name="delGroups"),
-    path('group/join/<str:name>/', joinGroup, name="joinGroup"),
+    path('group/<int:group_id>/join/', join, name='join'),
+    path('group/<int:group_id>/leave/', leave, name='leave'),
     path('login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
     path("logout", auth_views.LogoutView.as_view(template_name='accounts\logout.html'), name="logout"),
-    path('accounts/profile/', profile, name='profile')
+    path('accounts/profile/', profile, name='profile'),
+    path('reset_password/',
+         auth_views.PasswordResetView.as_view(
+             template_name="accounts/password_reset.html"),
+         name="reset_password"),
+
+    path('reset_password_sent/',
+         auth_views.PasswordResetDoneView.as_view(
+             template_name="accounts/password_reset_sent.html"),
+         name="password_reset_done"),
+
+    path('reset/<uidb64>/<token>/',
+         auth_views.PasswordResetConfirmView.as_view(
+             template_name="accounts/password_reset_form.html"),
+         name="password_reset_confirm"),
+
+    path('reset_password_complete/',
+         auth_views.PasswordResetCompleteView.as_view(
+             template_name="accounts/password_reset_done.html"),
+         name="password_reset_complete"),
 ]

@@ -92,18 +92,23 @@ username = urllib.parse.quote_plus('root')
 password = urllib.parse.quote_plus('Lovethis4050')
 name = urllib.parse.quote_plus('nlp')
 
-
 DATABASES = {
-
-
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'name',
-        'HOST': 'mongodb+srv://<root>:<Lovethis4050>@cluster0.ugoja.mongodb.net/test?retryWrites=true',
-        'USER': '<root>',
-        'PASSWORD': '<Lovethis4050>',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+
+
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'name',
+#         'HOST': 'mongodb+srv://<root>:<Lovethis4050>@cluster0.ugoja.mongodb.net/test?retryWrites=true',
+#         'USER': '<root>',
+#         'PASSWORD': '<Lovethis4050>',
+#     }
+# }
 
 
 # Password validation
@@ -146,3 +151,11 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sma302000@gmail.com' 
+EMAIL_HOST_PASSWORD = 'hqmfcwfqorrviezf'
+ 

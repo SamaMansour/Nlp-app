@@ -134,7 +134,7 @@
             	<table>
 						<thead>
 							<tr>
-								<th>User</th>
+								<th>Group</th>
 								<th>Actions</th>
 
 							</tr>
@@ -149,8 +149,8 @@
 								</td>
 								
 								<td>  
-                  <span class="status pending"> <a href="{% url 'joinGroup' name=i.name %}">Join</a></span>
-                  <span class="status pending"> <a href="{% url 'joinGroup' name=i.name %}">Leave</a></span></td>
+                  <span class="status pending"> <a href="{% url 'join' group_id=i.id  %}">Join</a></span>
+                  <span class="status pending"> <a href="{% url 'leave' group_id=i.id  %}">Leave</a></span></td>
                
 							</tr>
               {% endfor %}
