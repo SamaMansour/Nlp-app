@@ -150,7 +150,7 @@
 								
 								<td>  
                   <span class="status pending"> <a href="{% url 'join' name=i.name  %}">Join</a></span>
-                  <span class="status pending"> <a href="{% url 'leave' group_id=i.id  %}">Leave</a></span></td>
+                  <span class="status pending"> <a href="{% url 'leave' name=i.name  %}">Leave</a></span></td>
                
 							</tr>
               {% endfor %}

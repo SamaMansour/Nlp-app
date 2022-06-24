@@ -28,7 +28,7 @@ urlpatterns = [
     path('group/', getGroups, name="getGroups"),
     path('group/del/<str:name>/', delGroups, name="delGroups"),
     path('group/join/<str:name>', join, name='join'),
-    path('group/<int:group_id>/leave/', leave, name='leave'),
+    path('group/leave/<str:name>', leave, name='leave'),
     path('login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
     path("logout", auth_views.LogoutView.as_view(template_name='accounts\logout.html'), name="logout"),
     path('accounts/profile/', profile, name='profile'),

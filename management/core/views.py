@@ -186,17 +186,10 @@ def join(request, name):
    my_group = Group.objects.get(name=name)
    my_group.user_set.add(request.user)
    return render(request, 'group/user.html')
+
  # leave Group 
-
-
-def leave(request, user_id):
-    if request.method == 'POST':
-        group = get_object_or_404(Group, pk=group_id)
-        if request.user in group.members.all():
-            group.members.remove(request.user)
-            group.save()
-            return redirect('home')
-            return HttpResponse("You have been removed successfully " + str(user.username))
-
-    else:
-        return render(request, '/group/user.html')
+def leave(request,name):
+    my_group = Group.objects.get(name=name)
+    my_group.user_set.remove(request.user)
+    return render(request, 'group/user.html')
+    
