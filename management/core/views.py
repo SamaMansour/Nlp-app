@@ -182,14 +182,10 @@ def delGroups (request,name):
 
 
  # join Group 
-def join(request, group_id):
-    group = get_object_or_404(Group, pk=group_id)
-    if request.method == 'POST':
-        group.members.add(request.user)
-        group.save()
-        return redirect('/groups/' + str(group_id))
-    else:
-        return render(request, '/group/user.html', {'group': group})
+def join(request, name):
+   my_group = Group.objects.get(name=name)
+   my_group.user_set.add(request.user)
+   return render(request, 'group/user.html')
  # leave Group 
 
 
