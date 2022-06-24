@@ -152,13 +152,17 @@ def createGroup(request):
 # List Groups
 
 def getGroups(request):
-
+    
     groups = Group.objects.all()
     
     for i in groups:
         print (i.name)
-   
-    return render(request, 'group/user.html', context={'groups': groups})
+    if check_admin(request.user):
+        return render(request, 'group/create.html', context={'groups': groups})
+    else:
+        return render(request, 'group/user.html', context={'groups': groups})
+
+
 
 
     
