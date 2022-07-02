@@ -1,5 +1,4 @@
 {% load static %}
-{% block content %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -110,15 +109,15 @@
               <i class="bx bx-filter"></i>
             </div>
 
-            <form action="POST">
+            <form  method="POST" enctype="multipart/form-data">
               {% csrf_token %}
-               
+             
              {{ form.as_p }}
+              
                
-              {% endblock %}
 
               <div class="button-area">
-                <button type="submit">Send Message</button>
+                <button type="submit" >Send Message</button>
                 <span></span>
               </div>
             </form>

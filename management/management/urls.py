@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import HomeView, DashboardView,register_request,login_request,profile, createGroup, getGroups,delGroups, join, leave, ForgetPassword,ChangePassword
+from core.views import HomeView, DashboardView,register_request,login_request,profile, createGroup, getGroups,delGroups, join, leave, ForgetPassword,ChangePassword,create_view
 from django.contrib.auth import views as auth_views
 
 
@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView),
     path('signup/', register_request,name="register"),
+    path('create/', create_view, name='create-view'),
     path('group/add', createGroup, name="createGroup"),
     path('group/', getGroups, name="getGroups"),
     path('group/del/<str:name>/', delGroups, name="delGroups"),

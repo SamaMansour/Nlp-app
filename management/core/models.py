@@ -10,4 +10,7 @@ class Case (models.Model):
     workerGroup = models.CharField(blank=True,max_length=50)
     data = models.TextField(max_length=255)
 
+    def __str__(self):
+        return self.name
+
 

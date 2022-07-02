@@ -100,7 +100,7 @@ def ChangePassword(request, token):
         print(e)
     return render(request, 'accounts/change-password.html', context)
 
-# forget password
+# forgot password
 def ForgetPassword(request):
     try:
         if request.method == 'POST':
@@ -134,11 +134,11 @@ def profile(request):
 
 
 
-# check Admin
+# check admin
 def check_admin(User):
 	   return User.is_superuser
 
-# create Group
+# create group
 @login_required(login_url='login')
 def createGroup(request):
 	if request.method == 'POST':
@@ -149,7 +149,7 @@ def createGroup(request):
 				group.save()
 	return render(request,'group/create.html')
 
-# List Groups
+# list groups
 
 def getGroups(request):
     
@@ -163,15 +163,7 @@ def getGroups(request):
         return render(request, 'group/user.html', context={'groups': groups})
 
 
-
-
-    
-    
-        
-
-
-
-# Delete Group
+# delete group
 
 def delGroups (request,name):
     b =Group.objects.filter(name=name)
@@ -181,15 +173,28 @@ def delGroups (request,name):
 
 
 
- # join Group 
+ # join group 
 def join(request, name):
    my_group = Group.objects.get(name=name)
    my_group.user_set.add(request.user)
    return render(request, 'group/user.html')
 
- # leave Group 
+ # leave group 
 def leave(request,name):
     my_group = Group.objects.get(name=name)
     my_group.user_set.remove(request.user)
     return render(request, 'group/user.html')
-    
+
+ # create case
+def create_view(request):
+    # dictionary for initial data with
+    # field names as keys
+    context = {}
+
+    # add the dictionary during initialization
+    form = CaseForm(request.POST)
+    if form.is_valid():
+        form.save()
+
+    context['form'] = form
+    return render(request, "case/createCase.html", context)
