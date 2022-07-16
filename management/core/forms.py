@@ -34,9 +34,36 @@ class UserGroupForm(forms.ModelForm):
 
 
 class CaseForm(forms.ModelForm):
+    name = forms.CharField(widget=forms.TextInput(attrs={
+        "class": "form-control",
+        "placeholder": "name"
+    }))
+    owner = forms.CharField(widget=forms.TextInput(attrs={
+        "class": "form-control",
+        "placeholder": "owner"
+    }))
+    
+    workersList = forms.CharField(widget=forms.TextInput(attrs={
+        "class": "form-control",
+        "placeholder": "workersList"
+    }))
+
+    workerGroup = forms.CharField(widget=forms.TextInput(attrs={
+        "class": "form-control",
+        "placeholder": "WorkerGroup"
+    }))
+
+    data = forms.CharField(widget=forms.Textarea(attrs={
+        "class": "form-control",
+        "placeholder": "Data"
+    }))
+
+    description = forms.CharField(widget=forms.Textarea(attrs={
+        "class": "form-control",
+        "placeholder": "Description"
+    }))
     class Meta:
-    	model = Case
-    	fields = [
-            'name', 'description', 'owner', 'workersList', 'workerGroup', 'data'
-            
+        model = Case
+        fields = [
+            'name', 'owner', 'workersList', 'workerGroup', 'data', 'description'
         ]

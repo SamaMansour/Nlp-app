@@ -147,6 +147,7 @@ def createGroup(request):
 			if len(Group.objects.filter(name=name)) ==0:
 				group=Group(name=name)
 				group.save()
+				return redirect('/group')
 	return render(request,'group/create.html')
 
 # list groups
@@ -168,6 +169,7 @@ def getGroups(request):
 def delGroups (request,name):
     b =Group.objects.filter(name=name)
     b.delete()
+    return redirect('/group')
     return render(request, 'group/create.html')
 
 
@@ -185,16 +187,54 @@ def leave(request,name):
     my_group.user_set.remove(request.user)
     return render(request, 'group/user.html')
 
+
+@login_required(login_url='login')
  # create case
-def create_view(request):
+def create(request):
+    form = CaseForm(request.POST or None)
+
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('/create')
+    context = {
+        "form": form
+    }
+    return render(request, 'case/createCase.html', context)
+
+
+def update(request, id):
+    data = get_object_or_404(Case, id=id)
+    form = CaseForm(instance=data)
+
+    if request.method == "POST":
+        form = CaseForm(request.POST, instance=data)
+        if form.is_valid():
+            form.save()
+            return redirect('/cases')
+    context = {
+        "form": form
+    }
+    return render(request, 'case/createCase.html', context)
+
+
+def list_view(request):
     # dictionary for initial data with
     # field names as keys
     context = {}
 
     # add the dictionary during initialization
-    form = CaseForm(request.POST)
-    if form.is_valid():
-        form.save()
+    context["queryset"] = Case.objects.all()
 
-    context['form'] = form
-    return render(request, "case/createCase.html", context)
+    return render(request, "case/index.html", context)
+
+
+def casedetail(request, id):
+    case = Case.objects.get(id=id)
+    return render(request, 'case/detail.html', {'case': case})
+
+
+def delete(request, id):
+    data = get_object_or_404(Case, id=id)
+    data.delete()
+    return redirect('/cases')
